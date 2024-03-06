@@ -1,0 +1,15 @@
+.accent {
+    font-size: max(20px, 2vw);
+    padding-left: var(--space-small);
+    position: relative;
+}
+
+.accent::before {
+    content: '';
+    background-color: var(--color-primary);
+    height: 90%;
+    left:  -17px;
+    position: absolute;
+    top: 5%;
+    width: 15px;
+}

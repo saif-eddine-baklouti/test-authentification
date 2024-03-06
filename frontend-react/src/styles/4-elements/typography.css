@@ -1,0 +1,28 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: inherit;
+    letter-spacing: .03em;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+p {
+    font-size: max(16px, 1.5vw);
+    line-height: 1.5;
+}
+
+p + p {
+    margin-top: var(--space-xsmall);
+}
+
+strong {
+    font-weight: 700;
+}

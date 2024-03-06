@@ -1,0 +1,56 @@
+.entete {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+        font-size: max(35px, 4.5vw);
+    }
+
+    a {
+        font-size: max(14px, 1.5vw)
+    }
+
+    a + a {
+        margin-left: 15px;
+    }
+
+    .entete__right {
+        align-items: center;
+        display: flex;
+    }
+
+    form {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    input {
+        border: var(--color-primary) 1px solid;
+        border-radius: 3px;
+        color: var(--color-primary);
+        font-size: .8em;
+        font-weight: 300;
+        letter-spacing: .03em;
+        margin-right: 5px;
+        outline: none;
+        padding: 1px 8px;
+        width: 125px;
+    }
+
+    button {
+        background-color: transparent;
+        border: var(--color-primary) 1px solid;
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 0 8px;
+        transition: background-color .3s ease,
+                    color .3s ease;
+    }
+
+    button:hover {
+        background-color: var(--color-primary);
+        border: var(--color-primary) 1px solid;
+        color: var(--color-white);
+    }
+}

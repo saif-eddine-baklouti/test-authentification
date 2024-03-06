@@ -1,0 +1,18 @@
+:root {
+    --color-primary: #161616;
+    --color-secondary: #ffc648;
+    --color-tertiary: #d53e35;
+    --color-black: #161616;
+    --color-white: #fff;
+
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+    --space-base: 5px;
+    --space-xsmall: max(calc(var(--space-base) * 3), 1.5vw);
+    --space-small: max(calc(var(--space-base) * 6), 3vw);
+    --space-medium: max(calc(var(--space-base) * 12), 6vw);
+    --space-medium-large: max(calc(var(--space-base) * 18), 9vw);
+    --space-large: max(calc(var(--space-base) * 24), 12vw);
+    --space-xlarge: max(calc(var(--space-base) * 30), 15vw);
+
+}

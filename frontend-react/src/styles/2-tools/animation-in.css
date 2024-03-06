@@ -1,0 +1,23 @@
+/**
+ * ref : https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
+ */
+
+.animation-in > * {
+    animation-name: animateIn;
+    animation-duration: .3s;
+    animation-delay: calc(var(--animation-order) * 150ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animateIn {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}

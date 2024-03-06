@@ -1,0 +1,23 @@
+.title {
+    line-height: 1.2;
+}
+
+.title--primary {
+    font-size: max(30px, 3.25vw);
+    font-weight: 700;
+}
+
+.title--secondary {
+    font-size: max(24px, 2vw);
+    font-weight: 700;
+}
+
+.title--tertiary {
+    font-size: max(20px, 1.75vw);
+    font-weight: 300;
+}
+
+.title--quaternary {
+    font-size: max(16px, 1.5vw);
+    font-weight: 300;
+}

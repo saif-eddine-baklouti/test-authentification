@@ -1,0 +1,32 @@
+/* SETTINGS */
+@import url(./styles/1-settings/variables.css);
+
+
+/* TOOLS */
+@import url(./styles/2-tools/animation-in.css);
+
+
+/* GENERIC */
+@import url(./styles/3-generic/reset.css);
+
+/* ELEMENTS */
+@import url(./styles/4-elements/form.css);
+@import url(./styles/4-elements/link.css);
+@import url(./styles/4-elements/main.css);
+@import url(./styles/4-elements/typography.css);
+
+
+/* OBJECTS */
+@import url(./styles/5-objects/link.css);
+@import url(./styles/5-objects/spacing.css);
+@import url(./styles/5-objects/typography.css);
+@import url(./styles/5-objects/wrapper.css);
+
+
+/* COMPONENTS */
+@import url(./styles/6-components/btn.css);
+@import url(./styles/6-components/grid.css);
+@import url(./styles/6-components/title.css);
+
+
+/* UTILITIES */

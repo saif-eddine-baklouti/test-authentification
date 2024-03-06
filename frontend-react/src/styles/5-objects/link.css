@@ -1,0 +1,22 @@
+.active,
+.underline {
+    position: relative;
+}
+
+.active:not(:first-child):not(a)::after,
+.underline::after {
+    content: "";
+    background-color: var(--color-primary);
+    bottom: -2px;
+    height: 1px;
+    right: 0;
+    position: absolute;
+    transition: width 0.3s ease;
+    width: 0;
+}
+
+.active::after,
+.underline:hover::after {
+    left: 0;
+    width: 100%;
+}
