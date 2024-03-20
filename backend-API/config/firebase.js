@@ -1,6 +1,9 @@
 const admin = require("firebase-admin");
 const { getFirestore } = require("firebase-admin/firestore");
 
+// console.log(admin.initializeApp)
+
+// const serviceAccount = require("../api-films-sdk.json");
 const firebaseConfig = {
     type: process.env.TYPE,
     project_id: process.env.PROJECT_ID,
@@ -14,6 +17,7 @@ const firebaseConfig = {
     client_x509_cert_url: process.env.CLIENT_X509_CERT_URL,
     universe_domain: process.env.UNIVERSE_DOMAIN
 };
+// console.log(firebaseConfig);
 
 admin.initializeApp({
     credential: admin.credential.cert(firebaseConfig)

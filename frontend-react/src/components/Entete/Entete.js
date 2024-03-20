@@ -16,6 +16,9 @@ function Entete({ handleLogin }) {
                             <NavLink to="/admin" className={"underline"}>
                                 Page privée
                             </NavLink>
+                            <NavLink to="/admin/ajout-film" className={"underline"}>
+                                Ajouter un film
+                            </NavLink>
                         </nav>
                         <form onSubmit={handleLogin}>
                             <input type="text" name="courriel" placeholder="Usager"></input>
