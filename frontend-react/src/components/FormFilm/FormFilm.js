@@ -1,8 +1,13 @@
 import { useState } from "react"
 import "./FormFilm.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 function FormFilm() {
-    
+
+    const navigate = useNavigate();   
+    const genres = ["Action","Aventure","Comédie","Drame","Fantaisie","Horreur","Policier","Science-fiction","Thriller","Western"]
     const [formData, setFormData] = useState({
         titre:"",
         description:"",
@@ -15,18 +20,42 @@ function FormFilm() {
     const [formValidity, setFormValidity] = useState("invalid")
 
     function onFormDataChange(e) {
-        console.log(e.target.name);
-        console.log(e.target.value);
-
         const {name, value} = e.target
+        
+        if (name.startsWith("genre")) {
+            console.log("yess checked");
+            const estCoched = e.target.checked;
+            let genres = formData.genres || [];
+            // si on decoche, on enleve
 
-        const donneeModifiee = {...formData, [name]:value};
-        setFormData(donneeModifiee);
+            if (!estCoched && genres.includes(value)) {
+                genres = genres.filter( (el) =>{
+                    return el !== value
+                })
+            } else if (estCoched && !genres.includes(value)) {
+                genres.push(value);
+            }
 
-        const estValide = e.target.form.checkValidity() ? "valid" : "invalid"
-        setFormValidity(estValide)
+            const donneeModifiee = {...formData, genres:genres};
+            setFormData(donneeModifiee);
 
-        console.log(formData)
+        } else if (name === "titreVignette") {
+            
+            const nomFichier = e.target.files[0].name
+            const donneeModifiee = {...formData, "titreVignette":nomFichier};
+            setFormData(donneeModifiee);
+
+        } else {
+            
+            const donneeModifiee = {...formData, [name]:value};
+            setFormData(donneeModifiee);
+            const estValide = e.target.form.checkValidity() ? "valid" : "invalid"
+            setFormValidity(estValide)
+        }
+        
+
+
+        
     }
 
     async function onFormSubmit(e) {
@@ -70,9 +99,11 @@ function FormFilm() {
             })
             //Reinit l'état de validité
             setFormValidity("invalid") 
+
+            // navigate("/");
         } else {
             const messageErreur = response.error;
-            // console.log("erreur", messageErreur)
+            console.log("erreur", messageErreur)
         }
     }
 
@@ -100,6 +131,21 @@ function FormFilm() {
                     <div className="input-group">
                         <label htmlFor="titreVignette"> Titre Vignette</label>
                         <input type="text" name="titreVignette" id="titreVignette" value={formData.titreVignette} onChange={onFormDataChange} minLength={1} maxLength={150}/>
+                    </div>
+                    <div className="input-group" >
+                        <p>Genres</p>
+                        {genres.map( (el , i) => {
+                            return (
+                                <div key={i} > 
+                                <input type="checkbox" name={`genre-${el}`} id={el} value={el} onChange={onFormDataChange} checked={formData.genres.includes(el)} /> 
+                                <label htmlFor={el}> {el} </label>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className="input-group" >
+                        <input type="file" name="titreVignette" id="titreVignette" accept=".jpg,.jpeg,.png,.webp" onChange={onFormDataChange} />
+                        <label htmlFor="titreVignette"> Vignette</label>
                     </div>
                     <input type="submit" value="Envoyer" disabled={formValidity === "invalid" ? "disabled" : ""}/>
                 </form>
